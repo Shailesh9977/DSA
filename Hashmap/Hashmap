@@ -1,0 +1,290 @@
+unordered_map<int, string> mp;
+
+mp[101] = "Shailesh";
+
+
+
+(2)
+unordered_map<int, int> salary;
+
+salary[1001] = 45000;
+salary[1005] = 60000;
+salary[1020] = 75000;
+cout << salary[1005];
+
+
+(3)
+unordered_map<int, string> product;
+
+product[501] = "Laptop";
+product[502] = "Mouse";
+product[503] = "Keyboard";
+cout << product[502];
+
+(4)
+
+unordered_map<string, int> roll;
+
+roll["Shailesh"] = 101;
+roll["Rahul"] = 102;
+roll["Aman"] = 103;
+cout << roll["Shailesh"];
+
+
+(5)
+//square store karo.
+vector<int> arr = {2, 3, 5, 7};
+
+unordered_map<int, int> mp;
+
+for(int x : arr) {
+    mp[x] = x * x;
+}
+cout << mp[5];
+
+
+
+// update 
+
+unordered_map<int, int> marks;
+
+marks[101] = 80;
+marks[102] = 75;
+marks[103] = 90;
+
+cout << marks[102] << endl;
+
+marks[102] = 95;
+
+cout << marks[102] << endl;
+
+
+
+
+//emlpoyee -ID salary
+
+#endif // #include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, int> salary;
+
+    salary[101] = 30000;
+    salary[102] = 40000;
+    salary[103] = 50000;
+
+    // Access
+    cout << "Salary of 102: " << salary[102] << endl;
+
+    // Update
+    salary[102] = 45000;
+
+    cout << "Updated salary of 102: " << salary[102] << endl;
+
+    return 0;
+}
+
+//Student Roll No → Name
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, string> student;
+
+    student[101] = "Shailesh";
+    student[102] = "Rahul";
+    student[103] = "Aman";
+
+    cout << "Student 101: " << student[101] << endl;
+    cout << "Student 103: " << student[103] << endl;
+
+    // Update
+    student[103] = "Rohit";
+
+    cout << "After update: " << student[103] << endl;
+
+    return 0;
+}
+
+
+// — String Marks 
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+
+int main() {
+
+    unordered_map<string, int> marks;
+
+    marks["Shailesh"] = 85;
+    marks["Rahul"] = 72;
+    marks["Aman"] = 91;
+
+    cout << "Shailesh marks: " << marks["Shailesh"] << endl;
+    cout << "Rahul marks: " << marks["Rahul"] << endl;
+
+    // Update Rahul's marks
+    marks["Rahul"] = 88;
+
+    cout << "Rahul updated marks: " << marks["Rahul"] << endl;
+
+    return 0;
+}
+
+
+//frequency count karna hai 
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    int arr[] = {2, 5, 2, 3, 5, 2};
+
+    unordered_map<int, int> mp;
+
+    for(int x : arr) {
+        mp[x]++;
+    }
+
+    cout << "Frequency of 2: " << mp[2] << endl;
+    cout << "Frequency of 5: " << mp[5] << endl;
+    cout << "Frequency of 3: " << mp[3] << endl;
+
+    return 0;
+}
+
+// frequency 
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    int arr[] = {10, 10, 20, 30, 20, 10};
+
+    unordered_map<int, int> mp;
+
+    for(int x : arr) {
+        mp[x]++;
+    }
+
+    cout << "10 -> " << mp[10] << endl;
+    cout << "20 -> " << mp[20] << endl;
+    cout << "30 -> " << mp[30] << endl;
+
+    return 0;
+}
+
+
+// Search 
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, string> mp;
+
+    mp[101] = "Shailesh";
+    mp[102] = "Rahul";
+    mp[103] = "Aman";
+
+    if(mp.find(105) != mp.end()) {
+        cout << "105 is present" << endl;
+    }
+    else {
+        cout << "105 is not present" << endl;
+    }
+
+    return 0;
+}
+
+//Erase karna hai 
+
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, string> mp;
+
+    mp[101] = "Shailesh";
+    mp[102] = "Rahul";
+    mp[103] = "Aman";
+
+    cout << "Before erase:" << endl;
+    cout << "101 -> " << mp[101] << endl;
+    cout << "102 -> " << mp[102] << endl;
+    cout << "103 -> " << mp[103] << endl;
+
+    // Delete key 102
+    mp.erase(102);
+
+    cout << "\nAfter erase:" << endl;
+    cout << "101 -> " << mp[101] << endl;
+    cout << "103 -> " << mp[103] << endl;
+
+    return 0;
+}
+
+
+// check karke delete karna hai
+
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, string> mp;
+
+    mp[101] = "Shailesh";
+    mp[102] = "Rahul";
+    mp[103] = "Aman";
+
+    if(mp.count(102)) {
+        mp.erase(102);
+        cout << "102 deleted" << endl;
+    }
+    else {
+        cout << "102 not found" << endl;
+    }
+
+    cout << "Remaining elements: " << mp.size() << endl;
+
+    return 0;
+}
+
+//traversal
+
+
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int main() {
+
+    unordered_map<int, string> mp;
+
+    mp[101] = "Shailesh";
+    mp[102] = "Rahul";
+    mp[103] = "Aman";
+
+    for(auto x : mp) {
+        cout << x.first << " -> " << x.second << endl;
+    }
+
+    return 0;
+}
